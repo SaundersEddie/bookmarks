@@ -19,8 +19,7 @@
   "homepage": "https://github.com/SaundersEddie/bookmarks#readme",
   "devDependencies": {
     "cypress": "^8.7.0",
-    "cypress-iframe": "^1.0.1",
-    "jest": "^27.3.1"
+    "cypress-iframe": "^1.0.1"
   },
   "dependencies": {
     "express": "^4.17.1"

@@ -1,0 +1,28 @@
+{
+  "name": "bookmarks",
+  "version": "1.0.0",
+  "description": "Small social media platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaundersEddie/bookmarks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaundersEddie/bookmarks/issues"
+  },
+  "homepage": "https://github.com/SaundersEddie/bookmarks#readme",
+  "devDependencies": {
+    "cypress": "^8.7.0",
+    "cypress-iframe": "^1.0.1",
+    "jest": "^27.3.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

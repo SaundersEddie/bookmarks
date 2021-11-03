@@ -2,9 +2,14 @@
   "name": "bookmarks",
   "version": "1.0.0",
   "description": "Small social media platform",
-  "main": "index.js",
+  "main": "backend/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node backend/server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'frontend/*'\" \"npm run client\"",
+    "client": "cd frontend && npm run start",
+    "install": "cd frontend && npm install",
+    "build": "cd frontend && npm run build"
   },
   "repository": {
     "type": "git",
@@ -19,9 +24,12 @@
   "homepage": "https://github.com/SaundersEddie/bookmarks#readme",
   "devDependencies": {
     "cypress": "^8.7.0",
-    "cypress-iframe": "^1.0.1"
+    "cypress-iframe": "^1.0.1",
+    "nodemon": "^2.0.14"
   },
   "dependencies": {
+    "concurrently": "^6.3.0",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1"
   }
 }

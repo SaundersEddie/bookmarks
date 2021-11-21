@@ -6,8 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div>
-      <Container fluid>
-        <h1>Test</h1>
+      <Container>
+        <h1>Bookmarks Test Page</h1>
       </Container>
     </div>
   );

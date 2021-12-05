@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const passport = require('../../passport');
+const passport = require('../../passport/localStrategy');
 const controller = require('../../controllers');
 
 // this route is just used to get the user basic info

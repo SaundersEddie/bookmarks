@@ -16,10 +16,10 @@ export default function About() {
                 </Modal.Header>
                 <Modal.Body>
                     <p>Bookmarks was designed and developed by these fine people:</p>
-                    <p>Eddie Saunders</p>
-                    <p>Richard Kessler</p>
                     <p>Travis Culteri</p>
                     <p>Samuel Guevara</p>
+                    <p>Richard Kessler</p>
+                    <p>Eddie Saunders</p>
                     <p>This app is purely for fun, and no guarantee of production status or data retention is given.</p>
                     <a href="https://github.com/SaundersEddie/bookmarks" target="_blank" rel="noreferrer">Github</a><br />
                     <a href="mailto:edwyn.saunders@outlook.com">Email</a>

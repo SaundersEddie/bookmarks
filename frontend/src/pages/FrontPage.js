@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
 import logo from '../assets/images/logo.jpg';
@@ -27,12 +28,19 @@ export default function FrontPage() {
             <Navbar fixed="bottom" bg="dark" variant="dark">
                 <Container>
                     <Nav className="me-auto">
-                        <Nav.Link href="About">About</Nav.Link>
-                        <Nav.Link href="Contact">Contact</Nav.Link>
-                        <Nav.Link href="Copyright">&copy; 2021 Some Bunch of Coders or Something</Nav.Link>
+                        <Link href="About">About</Nav.Link>
+                        <Link href="Contact">Contact</Nav.Link>
+                        <Link href="Copyright">&copy; 2021 Some Bunch of Coders or Something</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
+            <Routes>
+                <Route path="/" exact element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/auth" element={<AuthOnly />} />
+                <Route path="/admin" element={<AdminOnly />} />
+            </Routes>
         </>
     )
 }

@@ -9,11 +9,11 @@ const PORT = process.env.PORT || 3001;
 const server = express();
 server.use(express.json());
 
-server.use(routes);
 
 if (process.env.NODE_ENV === "production") {
     server.use("/static", express.static(path.join(__dirname, "../frontend/build/static")));
     server.get("/", (req, res) => { res.sendFile(path.join(__dirname, "../frontend/build/")); });
 }
+server.use(routes);
 
 server.listen(PORT, () => console.log(`API Server Listening On Port ${PORT} `));

@@ -7,7 +7,7 @@ export default function About() {
     const handleShow = () => setShow(true);
     return (
         <>
-            <Button variant="link" onClick={handleShow}>
+            <Button className="nav-link" variant="link" onClick={handleShow}>
                 About
             </Button>
             <Modal show={show} onHide={handleClose} animation={true} scrollable={true}>

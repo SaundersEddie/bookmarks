@@ -1,16 +1,49 @@
-import Container from 'react-bootstrap/Container'
-import FrontPage from './pages/FrontPage';
+import React from "react";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { Navbar, Nav, Container } from 'react-bootstrap';
+
+import logo from './assets/images/logo.jpg';
+import Home from './pages/Home';
+import Register from './components/Register';
+import Login from './components/Login';
+import About from './components/About';
+
+export default function App() {
   return (
     <div>
-      <Container>
-        <FrontPage />
-      </Container>
+      <Router>
+        <Container>
+          <Navbar className="border-bottom" bg="transparent" expand="lg" sticky="top">
+            <Navbar.Brand>
+              <img
+                alt="Bookmarks Logo"
+                src={logo}
+                width="50"
+                height="50"
+                className="d-inline-block align-top"
+              />
+              </Navbar.Brand>
+              <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
+              <Navbar.Collapse id="navbar-toggle">
+                <Nav className="me-auto">
+                  <Link className='nav-link' to='/'>Home</Link>
+                  <Link className="nav-link" to="/register">Register</Link>
+                  <Link className="nav-link" to="/login">Login</Link>
+                </Nav>
+                <About />
+              </Navbar.Collapse>
+            </Navbar>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+          </Container>
+      </Router>
     </div>
   );
 }
-
-export default App;

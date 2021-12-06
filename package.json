@@ -35,10 +35,13 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "concurrently": "^6.3.0",
+    "connect-mongo": "^4.6.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-session": "^1.17.2",
     "if-env": "^1.0.4",
     "mongoose": "^6.0.12",
+    "passport": "^0.5.0",
     "passport-local": "^1.0.0"
   }
 }

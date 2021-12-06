@@ -11,10 +11,8 @@ const PORT = process.env.PORT || 3001;
 process.env.NODE_ENV === 'production' ? MONGO_STORE = process.env.PROD_DB : MONGO_STORE = process.env.DEV_DB
 
 require('dotenv').config();
-
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
-
 server.use(
     session({
         secret: process.env.SECRET || "this is the default passphrase",
@@ -31,8 +29,10 @@ if (process.env.NODE_ENV === "production") {
     server.use("/static", express.static(path.join(__dirname, "../frontend/build/static")));
     server.get("/", (req, res) => { res.sendFile(path.join(__dirname, "../frontend/build/")); });
 }
+
 server.use(routes);
 
+// Error Handler
 server.use(function (err, req, res, next) {
     console.log("====== ERROR =======");
     console.error(err.stack);

@@ -1,13 +1,13 @@
-// Update this file with routes as they're added
-
 const path = require('path');
 const router = require('express').Router();
 const testRoutes = require('./test');
-const userRoutes = require('./auth')
-
+const authRoutes = require('./auth');
+const apiRoutes = require('./api');
 // Test Routes
+
 router.use ('/test', testRoutes);
-router.use ('/uapi', userRoutes);
+router.use ('/auth', authRoutes);
+router.use ('/api', apiRoutes);
 
 // If no routes are hit, send the React app
 router.use(function (req, res) {

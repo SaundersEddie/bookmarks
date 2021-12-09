@@ -16,6 +16,7 @@ server.use(express.json());
 server.use(
     session({
         secret: process.env.SECRET || "this is the default passphrase",
+        cookie: { maxAge: (10*60*1000 )},
         store: MongoStore.create({ mongoUrl: MONGO_STORE }),
         resave: false,
         saveUninitialized: false,

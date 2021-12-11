@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  padding-top: 100px;
+}
+@media (max-width: 979px) {
+  body {
+    padding-top: 90px;
+  }
+}
+
+.navbar-custom {
+  background-color: #2274A5;
+}
+
+.navbar-custom .navbar-brand,
+  .navbar-custom .navbar-text {
+    color: white;
+}
+
+/* .btns {
+  this code styles btns --> style={{ color: "white", background: "red", border: "none", align:"center", margin:"20px" }}
+}
+*/

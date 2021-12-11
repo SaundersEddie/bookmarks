@@ -4,6 +4,7 @@ import axios from 'axios';
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
 
 const initialValues = {
     firstName: '',
@@ -122,18 +123,14 @@ export default function Register() {
                             onChange={onChangeOurForm}
                         />
                     </Col>
-                    <Form.Check type='radio' id={`isAdmin`}>
-                        <Form.Check.Input type='radio' isValid />
+                    <Form.Check type='checkbox' id={`isAdmin`}>
+                        <Form.Check.Input type='checkbox' isValid />
                         <Form.Check.Label>{`isAdmin`}</Form.Check.Label>
                     </Form.Check>
                 </Row>
                 <Row>
-                    <div className="form-group">
-                        <input
-                            type="submit"
-                            value="Register"
-                            className="Button"
-                        />
+                    <div className="form-group text-center">
+                    <Button as="input" type="submit" value="Register" />{''}
                     </div>
                 </Row>
             </Form>

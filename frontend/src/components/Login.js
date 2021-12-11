@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -68,12 +68,8 @@ export default function Login() {
                 </Row>
 
                 <Row>
-                    <div className="form-group">
-                        <input
-                            type="submit"
-                            value="Login"
-                            className="Button"
-                        />
+                    <div className="form-group text-center">
+                    <Button as="input" type="submit" value="Login" />{''}
                     </div>
                 </Row>
             </Form>

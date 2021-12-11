@@ -1,7 +1,6 @@
 import React from "react";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
@@ -16,15 +15,17 @@ export default function App() {
     <div>
       <Router>
         <Container>
-          <Navbar className="border-bottom" bg="transparent" expand="lg" sticky="top">
+          <Navbar className="border-bottom navbar-custom navbar-text" fixed="top" expand="lg" >
             <Navbar.Brand>
-              <img
-                alt="Bookmarks Logo"
-                src={logo}
-                width="50"
-                height="50"
-                className="d-inline-block align-top"
-              />
+              <a href="/">
+                <img
+                  alt="Bookmarks Logo"
+                  src={logo}
+                  width="50"
+                  height="50"
+                  className="d-inline-block align-top"
+                />
+              </a>
               </Navbar.Brand>
               <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
               <Navbar.Collapse id="navbar-toggle">

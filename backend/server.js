@@ -9,21 +9,21 @@ import dotenv from 'dotenv';
 // const routes = require('./routes');
 const server = express();
 const PORT = process.env.PORT || 3001;
-
-// process.env.NODE_ENV === 'production' ? MongoStore = process.env.PROD_DB : MongoStore = process.env.DEV_DB
+let MONGO_STORE
 dotenv.config();
+process.env.NODE_ENV === 'production' ? MONGO_STORE = process.env.PROD_DB : MONGO_STORE = process.env.DEV_DB
 
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
-// server.use(
-//     session({
-//         secret: process.env.SECRET || "this is the default passphrase",
-//         cookie: { maxAge: (10*60*1000 )},
-//         store: MongoStore.create({ mongoUrl: MONGO_STORE }),
-//         resave: false,
-//         saveUninitialized: false,
-//     })
-// );
+server.use(
+    session({
+        secret: process.env.SECRET || "this is the default passphrase",
+        cookie: { maxAge: (10*60*1000 )},
+        store: MongoStore.create({ mongoUrl: MONGO_STORE }),
+        resave: false,
+        saveUninitialized: false,
+    })
+);
 
 // server.use(passport.initialize());
 // server.use(passport.session());

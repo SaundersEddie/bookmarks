@@ -1,30 +1,22 @@
-const mongoose = require("mongoose");
-// mongoose.Promise = global.Promise;
-require('dotenv').config();
-
-if (process.env.NODE_ENV === 'production') {
-    console.log("Opening PROD DB")
-    mongoose.connect(process.env.PROD_DB, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    });
-} else {
-    console.log("Opening DEV DB")
-    mongoose.connect(process.env.DEV_DB, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    });
-}
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const database = mongoose.connection;
+const DB_OPTIONS = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}
+process.env.NODE_ENV === "production" ? mongoose.connect(process.env.PROD_DB, DB_OPTIONS) : mongoose.connect(process.env.DEV_DB, DB_OPTIONS)
+
 database.on("error", (err) => {
     console.log(`There was an error connecting to the database you nub: ${err}`);
 });
 
 database.once("open", () => {
     console.log(
-        `You have successfully connected to your mongo database`
+        `You have successfully connected to your ${process.env.NODE_ENV} mongo database`
     );
 });
 
-module.exports = database;
+export default database;

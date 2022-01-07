@@ -3,6 +3,10 @@ import path from 'path';
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
 import dotenv from 'dotenv';
+dotenv.config();
+
+
+import database from './database/database.js';
 
 // const dbConnection = require('./database/database.js');
 // const passport = require ('./passport');
@@ -10,7 +14,6 @@ import dotenv from 'dotenv';
 const server = express();
 const PORT = process.env.PORT || 3001;
 let MONGO_STORE
-dotenv.config();
 process.env.NODE_ENV === 'production' ? MONGO_STORE = process.env.PROD_DB : MONGO_STORE = process.env.DEV_DB
 
 server.use(express.urlencoded({ extended: true }));
@@ -28,10 +31,10 @@ server.use(
 // server.use(passport.initialize());
 // server.use(passport.session());
 
-if (process.env.NODE_ENV === "production") {
-    server.use("/static", express.static(path.join(__dirname, "../frontend/build/static")));
-    server.get("/", (req, res) => { res.sendFile(path.join(__dirname, "../frontend/build/")); });
-}
+// if (process.env.NODE_ENV === "production") {
+//     server.use("/static", express.static(path.join(__dirname, "../frontend/build/static")));
+//     server.get("/", (req, res) => { res.sendFile(path.join(__dirname, "../frontend/build/")); });
+// }
 
 // server.use(routes);
 

@@ -14,9 +14,7 @@ database.on("error", (err) => {
 });
 
 database.once("open", () => {
-    console.log(
-        `You have successfully connected to your ${process.env.NODE_ENV} mongo database`
-    );
+    console.log(`You have successfully connected to your ${process.env.NODE_ENV} mongo database`);
 });
 
 export default database;
